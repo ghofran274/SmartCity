@@ -15,6 +15,10 @@ public class VehiculeAutonome {
     private String type;
     private String energie;
 
+    @OneToMany(mappedBy = "vehicule")
+    private List<Trajet> trajet;
+
+
     public VehiculeAutonome() {
     }
 
