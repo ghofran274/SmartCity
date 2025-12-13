@@ -1,8 +1,8 @@
 // Controller
-package com.cities.smartCity.controller;
+package com.cities.smartCity.controller.bd1C;
 
-import com.cities.smartCity.entity.VehiculeAutonome;
-import com.cities.smartCity.service.VehiculeAutonomeService;
+import com.cities.smartCity.entity.bd1E.VehiculeAutonome;
+import com.cities.smartCity.service.bd1S.VehiculeAutonomeService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

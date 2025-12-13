@@ -1,7 +1,7 @@
-package com.cities.smartCity.controller;
+package com.cities.smartCity.controller.bd1C;
 
-import com.cities.smartCity.entity.Trajet;
-import com.cities.smartCity.service.TrajetService;
+import com.cities.smartCity.entity.bd1E.Trajet;
+import com.cities.smartCity.service.bd1S.TrajetService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

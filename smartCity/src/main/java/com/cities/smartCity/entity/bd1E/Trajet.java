@@ -1,6 +1,5 @@
-package com.cities.smartCity.entity;
+package com.cities.smartCity.entity.bd1E;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

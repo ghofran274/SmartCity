@@ -1,8 +1,8 @@
 // Service
-package com.cities.smartCity.service;
+package com.cities.smartCity.service.bd1S;
 
-import com.cities.smartCity.entity.VehiculeAutonome;
-import com.cities.smartCity.repository.VehiculeAutonomeRepository;
+import com.cities.smartCity.entity.bd1E.VehiculeAutonome;
+import com.cities.smartCity.repository.bd1R.VehiculeAutonomeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
