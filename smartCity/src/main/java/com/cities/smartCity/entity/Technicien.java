@@ -1,8 +1,12 @@
 package com.cities.smartCity.entity;
 
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.List;
 import jakarta.persistence.*;
-
+@Getter
+@Setter
 @Entity
 @Table(name = "technicien")
 public class Technicien {
@@ -15,45 +19,8 @@ public class Technicien {
     private String prenomTechnicien;
     private String telephone;
     private String specialite;
+    @OneToMany(mappedBy = "technicien", cascade = CascadeType.ALL)
+    private List<InterventionTechnicien> interventions;
 
-    public Integer getIdTechnicien() {
-        return idTechnicien;
-    }
-
-    public void setIdTechnicien(Integer idTechnicien) {
-        this.idTechnicien = idTechnicien;
-    }
-
-    public String getNomTechnicien() {
-        return nomTechnicien;
-    }
-
-    public void setNomTechnicien(String nomTechnicien) {
-        this.nomTechnicien = nomTechnicien;
-    }
-
-    public String getPrenomTechnicien() {
-        return prenomTechnicien;
-    }
-
-    public void setPrenomTechnicien(String prenomTechnicien) {
-        this.prenomTechnicien = prenomTechnicien;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public String getSpecialite() {
-        return specialite;
-    }
-
-    public void setSpecialite(String specialite) {
-        this.specialite = specialite;
-    }
 }
 

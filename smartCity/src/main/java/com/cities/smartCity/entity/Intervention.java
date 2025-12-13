@@ -1,9 +1,13 @@
 package com.cities.smartCity.entity;
 
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.List;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-
+@Getter
+@Setter
 @Entity
 @Table(name = "intervention")
 public class Intervention {
@@ -11,70 +15,15 @@ public class Intervention {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idIntervention;
-
-    @ManyToOne
-    @JoinColumn(name = "id_capteur")
-    private Capteur capteur;
-
     private LocalDateTime dateHeureDebut;
     private LocalDateTime dateHeureFin;
     private Float cout;
     private Float impactCo2;
     private String commentaire;
+    @ManyToOne
+    @JoinColumn(name = "id_capteur", nullable = false)
+    private Capteur capteur;
+    @OneToMany(mappedBy = "intervention")
+    private List<InterventionTechnicien> techniciens;
 
-    public Integer getIdIntervention() {
-        return idIntervention;
-    }
-
-    public void setIdIntervention(Integer idIntervention) {
-        this.idIntervention = idIntervention;
-    }
-
-    public Capteur getCapteur() {
-        return capteur;
-    }
-
-    public void setCapteur(Capteur capteur) {
-        this.capteur = capteur;
-    }
-
-    public LocalDateTime getDateHeureDebut() {
-        return dateHeureDebut;
-    }
-
-    public void setDateHeureDebut(LocalDateTime dateHeureDebut) {
-        this.dateHeureDebut = dateHeureDebut;
-    }
-
-    public LocalDateTime getDateHeureFin() {
-        return dateHeureFin;
-    }
-
-    public void setDateHeureFin(LocalDateTime dateHeureFin) {
-        this.dateHeureFin = dateHeureFin;
-    }
-
-    public Float getCout() {
-        return cout;
-    }
-
-    public void setCout(Float cout) {
-        this.cout = cout;
-    }
-
-    public Float getImpactCo2() {
-        return impactCo2;
-    }
-
-    public void setImpactCo2(Float impactCo2) {
-        this.impactCo2 = impactCo2;
-    }
-
-    public String getCommentaire() {
-        return commentaire;
-    }
-
-    public void setCommentaire(String commentaire) {
-        this.commentaire = commentaire;
-    }
 }

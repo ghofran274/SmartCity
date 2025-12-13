@@ -27,7 +27,8 @@ public class Trajet {
     private Integer duree;
 
     private Float economieCo2;
-
-    // getters & setters
+    @ManyToOne
+    @JoinColumn(name = "vehicule_id")
+    private VehiculeAutonome vehicule;
 }
 

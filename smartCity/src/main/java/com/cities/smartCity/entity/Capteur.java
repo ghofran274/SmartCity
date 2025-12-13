@@ -1,8 +1,10 @@
 package com.cities.smartCity.entity;
-
-
+import lombok.Getter;
+import lombok.Setter;
 import jakarta.persistence.*;
-
+import java.util.List;
+@Setter
+@Getter
 @Entity
 @Table(name = "capteur")
 public class Capteur {
@@ -19,69 +21,14 @@ public class Capteur {
 
     private String statut;
 
+    private String zone;
+
     @ManyToOne
-    @JoinColumn(name = "id_proprietaire")
+    @JoinColumn(name = "id_proprietaire", nullable = false)
     private Proprietaire proprietaire;
+    @OneToMany(mappedBy = "capteur")
+    private List<MesureCapteur> mesures;
+    @OneToMany(mappedBy = "capteur")
+    private List<Intervention> interventions;
 
-    @ManyToOne
-    @JoinColumn(name = "id_zone")
-    private Zone zone;
-
-    // ----- getters & setters -----
-
-    public Integer getIdCapteur() {
-        return idCapteur;
-    }
-
-    public void setIdCapteur(Integer idCapteur) {
-        this.idCapteur = idCapteur;
-    }
-
-    public String getNomCapteur() {
-        return nomCapteur;
-    }
-
-    public void setNomCapteur(String nomCapteur) {
-        this.nomCapteur = nomCapteur;
-    }
-
-    public Float getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Float latitude) {
-        this.latitude = latitude;
-    }
-
-    public Float getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Float longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getStatut() {
-        return statut;
-    }
-
-    public void setStatut(String statut) {
-        this.statut = statut;
-    }
-
-    public Proprietaire getProprietaire() {
-        return proprietaire;
-    }
-
-    public void setProprietaire(Proprietaire proprietaire) {
-        this.proprietaire = proprietaire;
-    }
-
-    public Zone getZone() {
-        return zone;
-    }
-
-    public void setZone(Zone zone) {
-        this.zone = zone;
-    }
 }

@@ -1,5 +1,6 @@
 package com.cities.smartCity.entity;
 
+import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -18,7 +19,8 @@ public class VehiculeAutonome {
     private String plaqueImmatriculation;
     private String typeVehicule;
     private String energie;
-
+    @OneToMany(mappedBy = "vehicule")
+    private List<Trajet> trajets;
 
 }
 
