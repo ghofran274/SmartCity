@@ -59,6 +59,5 @@ public class MesureCapteur {
     private String unite;
     @ManyToOne
     @JoinColumn(name = "id_capteur", nullable = false)
-    @JsonIgnore
     private Capteur capteur;
 }

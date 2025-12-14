@@ -10,7 +10,7 @@ import java.util.List;
 public interface MesureCapteurRepository extends JpaRepository<MesureCapteur, Integer> {
 
     @Query("""
-           SELECT m.capteur.idCapteur, m.capteur.nomCapteur, SUM(m.valeur)
+           SELECT m.capteur.idCapteur, m.capteur.nomCapteur, SUM(m.valeur),m.capteur.zone
            FROM MesureCapteur m
            WHERE m.dateHeureMesure BETWEEN :from AND :to
            GROUP BY m.capteur.idCapteur, m.capteur.nomCapteur

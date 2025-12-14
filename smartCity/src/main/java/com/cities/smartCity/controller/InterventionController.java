@@ -21,7 +21,7 @@ public class InterventionController {
         return service.create(i);
     }
 
-    @GetMapping
+    @GetMapping("/getAll")
     public List<Intervention> getAll() {
         return service.getAll();
     }

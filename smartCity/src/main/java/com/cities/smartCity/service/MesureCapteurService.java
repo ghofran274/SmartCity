@@ -38,7 +38,8 @@ public class MesureCapteurService {
             Integer idCapteur = (Integer) row[0];
             String nomCapteur = (String) row[1];
             Double total = (Double) row[2];
-            result.add(new CapteurPollutionDto(idCapteur, nomCapteur, total.floatValue()));
+            String zone = (String) row[3];
+            result.add(new CapteurPollutionDto(idCapteur, nomCapteur, total.floatValue(),zone));
         }
         return result;
     }
@@ -47,11 +48,14 @@ public class MesureCapteurService {
         public Integer idCapteur;
         public String nomCapteur;
         public Float totalPollution;
+        public String zone;
 
-        public CapteurPollutionDto(Integer idCapteur, String nomCapteur, Float totalPollution) {
+        public CapteurPollutionDto(Integer idCapteur, String nomCapteur, Float totalPollution,String zone) {
             this.idCapteur = idCapteur;
             this.nomCapteur = nomCapteur;
             this.totalPollution = totalPollution;
+            this.zone = zone;
+
         }
     }
 }

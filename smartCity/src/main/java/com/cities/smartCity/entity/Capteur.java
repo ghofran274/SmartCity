@@ -24,7 +24,6 @@ public class Capteur {
 
     @ManyToOne
     @JoinColumn(name = "id_proprietaire", nullable = false)
-    @JsonIgnore
     private Proprietaire proprietaire;
 
     @OneToMany(mappedBy = "capteur")
