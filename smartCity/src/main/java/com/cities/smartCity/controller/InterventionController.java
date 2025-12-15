@@ -28,7 +28,7 @@ public class InterventionController {
 
     // Toutes les interventions prédictives de ce mois
     @GetMapping("/prem")
-    public List<Intervention> predictiveThisMonth() {
+    public List<InterventionService.Ozil> predictiveThisMonth() {
         return service.getPredictiveThisMonth();
     }
 }
